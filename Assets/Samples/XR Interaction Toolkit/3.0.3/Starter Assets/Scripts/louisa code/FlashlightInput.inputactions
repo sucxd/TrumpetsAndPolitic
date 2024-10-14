@@ -1,0 +1,34 @@
+{
+    "name": "FlashlightInput",
+    "maps": [
+        {
+            "name": "FlashlightControls",
+            "id": "cd0d5753-a3f5-4187-a4ab-a715775d02af",
+            "actions": [
+                {
+                    "name": "ToggleFlashlight",
+                    "type": "Button",
+                    "id": "69757b4b-5397-45c9-9499-5f36acff5a93",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "46155cde-b334-43f8-8c72-e14c4d9d5b09",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleFlashlight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
