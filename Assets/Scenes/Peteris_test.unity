@@ -803,7 +803,7 @@ PrefabInstance:
       addedObject: {fileID: 1785160284}
     - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: f2f17562080ea644a8667e26d52feed8, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1785160285}
+      addedObject: {fileID: 1785160286}
   m_SourcePrefab: {fileID: 100100000, guid: f2f17562080ea644a8667e26d52feed8, type: 3}
 --- !u!1001 &1031336476
 PrefabInstance:
@@ -1322,6 +1322,7 @@ GameObject:
   - component: {fileID: 1706255034}
   - component: {fileID: 1706255033}
   - component: {fileID: 1706255032}
+  - component: {fileID: 1706255035}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -1451,6 +1452,36 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1706255035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706255030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d523a3ab4523a042938e661edad6d29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashlight: {fileID: 1706255034}
+  toggleAction:
+    m_Name: Toggle
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e6603e63-7ca1-4a9a-be0d-dd8b44d6a692
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 059b550a-7d59-4a6c-aa57-42e48bac6414
+      m_Path: 
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Toggle
+      m_Flags: 0
+    m_Flags: 0
 --- !u!1 &1785160278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: f2f17562080ea644a8667e26d52feed8, type: 3}
@@ -1655,7 +1686,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03352845, y: 0.03352808, z: 0.020895345}
   m_Center: {x: -0.00000009965153, y: -5.2707644e-19, z: 0.000447643}
---- !u!114 &1785160285
+--- !u!114 &1785160286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1664,22 +1695,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1785160278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d10e7b5f3eb0049b468b58c0df7ee1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d523a3ab4523a042938e661edad6d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   flashlight: {fileID: 1706255034}
   toggleAction:
-    m_UseReference: 1
-    m_Action:
-      m_Name: Toggle
-      m_Type: 1
-      m_ExpectedControlType: Button
-      m_Id: 907a630e-46bf-466d-956c-ed1ec895a599
-      m_Processors: 
+    m_Name: Toggle
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: e6603e63-7ca1-4a9a-be0d-dd8b44d6a692
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 1fae46c8-7f19-4bb6-96bf-67379b62a74d
+      m_Path: <Keyboard>/o
       m_Interactions: 
-      m_SingletonActionBindings: []
+      m_Processors: 
+      m_Groups: 
+      m_Action: Toggle
       m_Flags: 0
-    m_Reference: {fileID: 2587446197308408304, guid: 60d764193f15f704a8d9934d1c8d752d, type: 3}
+    m_Flags: 0
 --- !u!1 &1837734482
 GameObject:
   m_ObjectHideFlags: 0
