@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Anchor
   - Figurine
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
