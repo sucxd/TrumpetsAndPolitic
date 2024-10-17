@@ -1,41 +1,63 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
 
-public class FridgeShaker : MonoBehaviour
+public class FridgeShake : MonoBehaviour
 {
-    public Rigidbody fridgeRigidbody;
-    public float shakeForce = 2.0f; // Adjust this for how much the fridge should shake
-    
-    // This will be called when the player's hand enters the trigger collider
-    private void OnTriggerEnter(Collider other)
+    public float shakeAmount = 0.05f;  // Fridge shake amount
+    public float shakeSpeed = 5.0f;    // Shake speed
+    public float tiltAmount = 5.0f;    // Shake tilt
+    public float liftAmount = 0.02f;    // Lift amount when shaking
+    private Vector3 initialPosition;
+    private Quaternion initialRotation;
+    private bool isShaking = false;    // Shake check
+
+    public XRController controller;   
+    public InputActionReference gripAction;
+
+    private void Start()
     {
-        if (other.CompareTag("PlayerHand")) // Make sure the hand/controller has this tag
+        initialPosition = transform.localPosition;
+        initialRotation = transform.localRotation;
+    }
+
+    private void Update()
+    {
+        if (gripAction.action != null && gripAction.action.IsPressed())
         {
-            Debug.Log("Player hand entered fridge trigger zone.");
+            isShaking = true;
+        }
+        else
+        {
+            isShaking = false;
+            transform.localPosition = initialPosition;
+            transform.localRotation = initialRotation;
+        }
+
+        if (isShaking)
+        {
+            ShakeFridge();
         }
     }
 
-    // Called while the player's hand is still in the trigger area
-    private void OnTriggerStay(Collider other)
+    private void ShakeFridge()
     {
-        if (other.CompareTag("PlayerHand"))
-        {
-            // Apply random shaking force
-            Vector3 randomShake = new Vector3(
-                Random.Range(-shakeForce, shakeForce),
-                0, // No vertical force (Y-axis), so it doesn't move up or down
-                Random.Range(-shakeForce, shakeForce)
-            );
+        float shakeOffset = Mathf.Sin(Time.time * shakeSpeed) * shakeAmount;
+        float tiltAngle = Mathf.Sin(Time.time * shakeSpeed) * tiltAmount;
 
-            fridgeRigidbody.AddTorque(randomShake); // Apply the shake as rotational force
-        }
-    }
+        // Calculate lift effect: lift on one side based on shake offset
+        float liftOffset = Mathf.Sin(Time.time * shakeSpeed) * liftAmount;
 
-    // This is called when the player's hand exits the trigger collider
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("PlayerHand"))
-        {
-            Debug.Log("Player hand left the fridge trigger zone.");
-        }
+        // Apply side-to-side movement (Z-axis), tilt (Y-axis rotation), and lift (Y-axis position)
+        // Adjust the Y position to alternate lifting sides based on shake offset
+        float newYPosition = initialPosition.y + (shakeOffset > 0 ? liftOffset : -liftOffset);
+
+        transform.localPosition = new Vector3(
+            initialPosition.x, 
+            newYPosition,  // Adjusted Y position for side-to-side lifting
+            initialPosition.z + shakeOffset  // Apply shake offset
+        );
+
+        transform.localRotation = initialRotation * Quaternion.Euler(0, tiltAngle, 0); 
     }
 }

@@ -1464,24 +1464,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d523a3ab4523a042938e661edad6d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashlight: {fileID: 1706255034}
-  toggleAction:
-    m_Name: Toggle
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e6603e63-7ca1-4a9a-be0d-dd8b44d6a692
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 059b550a-7d59-4a6c-aa57-42e48bac6414
-      m_Path: 
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Toggle
-      m_Flags: 0
-    m_Flags: 0
 --- !u!1 &1785160278 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: f2f17562080ea644a8667e26d52feed8, type: 3}
@@ -1698,24 +1680,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d523a3ab4523a042938e661edad6d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashlight: {fileID: 1706255034}
-  toggleAction:
-    m_Name: Toggle
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e6603e63-7ca1-4a9a-be0d-dd8b44d6a692
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 1fae46c8-7f19-4bb6-96bf-67379b62a74d
-      m_Path: <Keyboard>/o
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Toggle
-      m_Flags: 0
-    m_Flags: 0
 --- !u!1 &1837734482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,6 +1785,130 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837734482}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1877250072
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1877250077}
+  - component: {fileID: 1877250076}
+  - component: {fileID: 1877250075}
+  - component: {fileID: 1877250074}
+  - component: {fileID: 1877250073}
+  m_Layer: 0
+  m_Name: fridge
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1877250073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877250072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acca8baf87aa6d54c9a907937525ae29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeAmount: 0.05
+  shakeSpeed: 10
+  tiltAmount: 5
+  liftAmount: 0.02
+  controller: {fileID: 0}
+  gripAction: {fileID: 5667446173830999989, guid: 0be0028c24f2a4c14a96b6aa39055933, type: 3}
+--- !u!65 &1877250074
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877250072}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &1877250075
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877250072}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 67af2d995350c5f45bdaf5ee21644e12, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1877250076
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877250072}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1877250077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877250072}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000060289935, y: -0.69915825, z: -0.000015753714, w: 0.714967}
+  m_LocalPosition: {x: 5.17, y: 0.917, z: -1.12}
+  m_LocalScale: {x: 0.95173794, y: 1.7099752, z: 0.4979261}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -0.001, y: -88.719, z: -0.002}
 --- !u!1 &1915459191
 GameObject:
   m_ObjectHideFlags: 0
@@ -2282,16 +2370,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d523a3ab4523a042938e661edad6d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flashlight: {fileID: 0}
-  toggleAction:
-    m_Name: Toggle
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: e6603e63-7ca1-4a9a-be0d-dd8b44d6a692
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
 --- !u!65 &8177163017532780247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2471,6 +2549,7 @@ SceneRoots:
   - {fileID: 511970263}
   - {fileID: 1513839182737080295}
   - {fileID: 1153672158}
+  - {fileID: 1877250077}
   - {fileID: 856016050}
   - {fileID: 1388808206}
   - {fileID: 1645100387}
